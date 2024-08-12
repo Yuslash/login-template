@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind css starter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="nav-bar"></div>
+    <div class="circle"></div>
+    <div class="circle2"></div>
+    <div class="circle3"></div>
+    <div class="center-container">
+        <div
+            style="width: 829px; height: 389px; justify-content: flex-start; align-items: flex-start; gap: 80px; display: inline-flex">
+            <div
+                style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 85px; display: inline-flex">
+                <div
+                    style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 40px; display: flex">
+                    <div
+                        style="color: white; font-size: 48px; font-family: Poppins; font-weight: 700; word-wrap: break-word">
+                        Login</div>
+                    <div
+                        style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 21px; display: flex">
+                        <label
+                            style="width: 428px; height: 57px; padding-left: 10px; padding-right: 10px; padding-top: 15px; padding-bottom: 15px; border-radius: 15px; border: 1px #ABB3FF solid; justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
+                            <input id="username" type="text" placeholder="Username"
+                                style="color: #8E90A7; font-size: 15px; font-family: Poppins; font-weight: 400; word-wrap: break-word; border: none; background: transparent; outline: none;">
+                        </label>
+                        <label
+                            style="width: 428px; height: 57px; padding-left: 10px; padding-right: 10px; padding-top: 15px; padding-bottom: 15px; border-radius: 15px; border: 1px #ABB3FF solid; justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
+                            <input id="password" type="password" placeholder="Password"
+                                style="color: #8E90A7; font-size: 15px; font-family: Poppins; font-weight: 400; word-wrap: break-word; border: none; background: transparent; outline: none;">
+                        </label>
+                    </div>
+                </div>
+                <button id="loginBtn"
+                    style="width: 428px; height: 57px; padding-left: 10px; padding-right: 10px; padding-top: 15px; padding-bottom: 15px; background: #705DF2; border-radius: 30px; justify-content: center; align-items: center; gap: 10px; display: inline-flex; color: white; font-size: 15px; font-family: Poppins; font-weight: 700; word-wrap: break-word; border: none; cursor: pointer;">Start
+                    Exploring</button>
+            </div>
+            <div id="image-container"
+                style="width: 321px; height: 389px; position: relative; background: rgb(81, 107, 255); border-radius: 15px; overflow: hidden;">
+                <img id="movingImage" src="/src/dist/assets/image.png" alt="Your Image"
+                    style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; animation: shakeImage 3s infinite;">
+            </div>
+        </div>
+    </div>
+<script>
+    document.getElementById('loginBtn').addEventListener('click', function () {
+        loginUser();
+    });
+
+    document.getElementById('username').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            loginUser();
+        }
+    });
+
+    document.getElementById('password').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            loginUser();
+        }
+    });
+
+    function loginUser() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        // Simple check for demonstration, replace with your authentication logic
+        if (username === 'sibikrishna' && password === 'sibikrishna') {
+            alert('Login successful!');
+            // Redirect to another HTML page
+            window.location.href = 'https://sibikrishnak.vercel.app/';
+        } else {
+            alert('Invalid username or password');
+        }
+    }
+</script>
+
+
+
+    <style>
+        @keyframes shakeImage {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-10px);
+            }
+
+            50% {
+                transform: translateX(10px);
+            }
+
+            75% {
+                transform: translateX(-10px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+
+</body>
+
+</html>
